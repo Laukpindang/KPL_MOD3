@@ -36,6 +36,7 @@
             textBox2 = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -46,14 +47,17 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(109, 33);
             comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Celcius", "Fahrenheit", "Kelvin", "Reamur" });
             comboBox2.Location = new Point(69, 203);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(109, 33);
             comboBox2.TabIndex = 1;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -80,6 +84,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(321, 31);
             textBox1.TabIndex = 4;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
@@ -108,11 +113,22 @@
             label4.TabIndex = 7;
             label4.Text = "Nilai akhir";
             // 
+            // button1
+            // 
+            button1.Location = new Point(549, 119);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 34);
+            button1.TabIndex = 8;
+            button1.Text = "convert";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -137,5 +153,6 @@
         private TextBox textBox2;
         private Label label3;
         private Label label4;
+        private Button button1;
     }
 }
